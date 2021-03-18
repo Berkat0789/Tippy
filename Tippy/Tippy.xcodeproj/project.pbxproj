@@ -13,6 +13,9 @@
 		B401B4B726038E1D0078868D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B401B4B526038E1D0078868D /* Main.storyboard */; };
 		B401B4B926038E1E0078868D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B401B4B826038E1E0078868D /* Assets.xcassets */; };
 		B401B4BC26038E1E0078868D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B401B4BA26038E1E0078868D /* LaunchScreen.storyboard */; };
+		B46B498C2603A1F300189962 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B498B2603A1F300189962 /* ResultsVC.swift */; };
+		B46B49902603A3DD00189962 /* TipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B498F2603A3DD00189962 /* TipService.swift */; };
+		B46B49932603A4A400189962 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B49922603A4A400189962 /* Bill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B401B4B826038E1E0078868D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B401B4BB26038E1E0078868D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B401B4BD26038E1E0078868D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B46B498B2603A1F300189962 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
+		B46B498F2603A3DD00189962 /* TipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipService.swift; sourceTree = "<group>"; };
+		B46B49922603A4A400189962 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		B401B4AE26038E1D0078868D /* Tippy */ = {
 			isa = PBXGroup;
 			children = (
+				B46B498E2603A3D000189962 /* Model */,
 				B401B4AF26038E1D0078868D /* AppDelegate.swift */,
 				B401B4B126038E1D0078868D /* SceneDelegate.swift */,
 				B43C854E26038E6F00F18006 /* Controller */,
@@ -79,8 +86,18 @@
 			isa = PBXGroup;
 			children = (
 				B401B4B326038E1D0078868D /* CalculateVC.swift */,
+				B46B498B2603A1F300189962 /* ResultsVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B46B498E2603A3D000189962 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B46B498F2603A3DD00189962 /* TipService.swift */,
+				B46B49922603A4A400189962 /* Bill.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46B49902603A3DD00189962 /* TipService.swift in Sources */,
 				B401B4B426038E1D0078868D /* CalculateVC.swift in Sources */,
+				B46B498C2603A1F300189962 /* ResultsVC.swift in Sources */,
+				B46B49932603A4A400189962 /* Bill.swift in Sources */,
 				B401B4B026038E1D0078868D /* AppDelegate.swift in Sources */,
 				B401B4B226038E1D0078868D /* SceneDelegate.swift in Sources */,
 			);

@@ -114,7 +114,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="zxU-eL-6jE">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="zxU-eL-6jE">
                                                 <rect key="frame" x="67" y="0.0" width="94" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
@@ -174,11 +174,83 @@
                         <outlet property="tenButtton" destination="M2B-gq-Zh7" id="Cge-3K-EHP"/>
                         <outlet property="twentyButton" destination="bNX-z0-qw3" id="qS9-Me-N5W"/>
                         <outlet property="zeroButton" destination="U32-qo-y6Y" id="wPs-nA-Fa7"/>
+                        <segue destination="pTE-Uc-lNJ" kind="show" identifier="toResults" id="LRF-vh-aUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="76.339285714285708"/>
+        </scene>
+        <!--ResultsVC-->
+        <scene sceneID="PTG-d8-3K9">
+            <objects>
+                <viewController id="pTE-Uc-lNJ" customClass="ResultsVC" customModule="Tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fsj-Ug-HGd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oe-lX-ong">
+                                <rect key="frame" x="20" y="724" width="374" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ck4-T4-q7V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="23"/>
+                                <state key="normal" title="ReCalculate">
+                                    <color key="titleColor" red="0.051992215219999999" green="0.2398941517" blue="0.26065564159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ihl-cS-WvK"/>
+                                    <action selector="recalculatePressed:" destination="pTE-Uc-lNJ" eventType="touchUpInside" id="0E6-Rt-CER"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBu-nr-R0l">
+                                <rect key="frame" x="20" y="20" width="374" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcb-7S-JP7">
+                                        <rect key="frame" x="146.5" y="90" width="81.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                        <color key="textColor" red="0.051992215219999999" green="0.2398941517" blue="0.26065564159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="2DE-3T-IjD"/>
+                                    <constraint firstItem="Jcb-7S-JP7" firstAttribute="centerY" secondItem="sBu-nr-R0l" secondAttribute="centerY" id="Iug-gm-6D1"/>
+                                    <constraint firstItem="Jcb-7S-JP7" firstAttribute="centerX" secondItem="sBu-nr-R0l" secondAttribute="centerX" id="eLL-pZ-jr7"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The payment perperson is $100 for a group of 4 and a tip of 10%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-qe-fTz">
+                                <rect key="frame" x="20" y="262" width="374" height="200"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zTS-Mm-R50"/>
+                        <color key="backgroundColor" red="0.051992215219999999" green="0.2398941517" blue="0.26065564159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zTS-Mm-R50" firstAttribute="trailing" secondItem="7Oe-lX-ong" secondAttribute="trailing" constant="20" id="6iC-PT-xSp"/>
+                            <constraint firstItem="zTS-Mm-R50" firstAttribute="trailing" secondItem="sBu-nr-R0l" secondAttribute="trailing" constant="20" id="D86-Lr-4la"/>
+                            <constraint firstItem="VCo-qe-fTz" firstAttribute="top" secondItem="sBu-nr-R0l" secondAttribute="bottom" constant="12" id="Gyd-L9-1Ne"/>
+                            <constraint firstItem="sBu-nr-R0l" firstAttribute="top" secondItem="zTS-Mm-R50" secondAttribute="top" constant="20" id="HLt-ya-grG"/>
+                            <constraint firstItem="7Oe-lX-ong" firstAttribute="bottom" secondItem="zTS-Mm-R50" secondAttribute="bottom" id="NGc-ms-0HS"/>
+                            <constraint firstItem="VCo-qe-fTz" firstAttribute="leading" secondItem="sBu-nr-R0l" secondAttribute="leading" id="e7y-wK-iZ1"/>
+                            <constraint firstItem="sBu-nr-R0l" firstAttribute="leading" secondItem="zTS-Mm-R50" secondAttribute="leading" constant="20" id="e9F-bc-ik0"/>
+                            <constraint firstItem="7Oe-lX-ong" firstAttribute="leading" secondItem="zTS-Mm-R50" secondAttribute="leading" constant="20" id="i2g-9k-C2P"/>
+                            <constraint firstItem="VCo-qe-fTz" firstAttribute="trailing" secondItem="sBu-nr-R0l" secondAttribute="trailing" id="v3K-Pv-CC1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rEb-Xp-jUk"/>
+                    <connections>
+                        <outlet property="summaryLabel" destination="VCo-qe-fTz" id="S5z-Ci-gX5"/>
+                        <outlet property="totalAmountLabel" destination="Jcb-7S-JP7" id="i2W-w6-foT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Cn-Yd-mcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="76"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YTc-IO-bGC">
@@ -188,6 +260,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="60P-xN-dcL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.051992215219999999" green="0.2398941517" blue="0.26065564159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>

@@ -17,6 +17,8 @@ class CalculateVC: UIViewController {
     @IBOutlet weak var partySizeStepper: UIStepper!
     @IBOutlet weak var partySizeLabel: UILabel!
     
+    
+    var tipSrvice = TipService()
     var tip = 0.0
     var total = 0.0
     // Computed property to keep a whole number value of the stepper
@@ -47,12 +49,18 @@ class CalculateVC: UIViewController {
         // will run calculation for the tip as well as the cost person
         // Assuming that teveryone has agreed to splitthe bill evenly
         if let billAmt = Double(billValueLabel.text!) {
-            let partySize = stepperIntValue
-            let tipAmount = billAmt * tip
-            total = (billAmt + tipAmount) / Double(partySize)
-            print(total)
+            tipSrvice.calculateTip(billTotal: billAmt, groupSize: stepperIntValue, tipAmount: tip)
             self.billValueLabel.text = ""
+            performSegue(withIdentifier: "toResults", sender: self)
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResults" {
+            let resultsVC = segue.destination as! ResultsVC
+            resultsVC.total = tipSrvice.totalPerPersonString
+            resultsVC.summary = tipSrvice.billSummary
         }
     }
     
