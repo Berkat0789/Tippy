@@ -21,6 +21,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill -eg: 45.99" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="keZ-1O-uyA">
                                         <rect key="frame" x="8" y="15" width="398" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="AfO-7C-A8K"/>
                                         </constraints>
@@ -52,6 +53,9 @@
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BWL-aw-cdL"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2B-gq-Zh7">
                                                         <rect key="frame" x="60" y="0.0" width="50" height="40"/>
@@ -60,6 +64,9 @@
                                                         <state key="normal" title="10%">
                                                             <color key="titleColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dyx-Gg-dak"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNX-z0-qw3">
                                                         <rect key="frame" x="120" y="0.0" width="50" height="40"/>
@@ -68,6 +75,9 @@
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bAF-Gy-KKw"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -107,6 +117,9 @@
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="zxU-eL-6jE">
                                                 <rect key="frame" x="67" y="0.0" width="94" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="stepperSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="kgW-Si-WzX"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                         <constraints>
@@ -131,6 +144,9 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tJ-Um-p6J"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -151,6 +167,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Enter Bill and Tip Amount" id="QJq-Ir-SJb"/>
+                    <connections>
+                        <outlet property="billValueLabel" destination="keZ-1O-uyA" id="G6R-pe-S7J"/>
+                        <outlet property="partySizeLabel" destination="eCT-Ag-ahK" id="332-FU-IZf"/>
+                        <outlet property="partySizeStepper" destination="zxU-eL-6jE" id="4vN-Kb-BrP"/>
+                        <outlet property="tenButtton" destination="M2B-gq-Zh7" id="Cge-3K-EHP"/>
+                        <outlet property="twentyButton" destination="bNX-z0-qw3" id="qS9-Me-N5W"/>
+                        <outlet property="zeroButton" destination="U32-qo-y6Y" id="wPs-nA-Fa7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
